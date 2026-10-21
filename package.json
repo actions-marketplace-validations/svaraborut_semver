@@ -1,0 +1,30 @@
+{
+    "name": "semver",
+    "version": "1.0.0",
+    "description": "GitHub action",
+    "author": "Borut Svara <borut@svara.io>",
+    "license": "ISC",
+    "main": "src/index.ts",
+    "scripts": {
+        "build": "bun build build src/index.ts --minify --outdir=dist"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/svaraborut/semver.git"
+    },
+    "bugs": {
+        "url": "https://github.com/svaraborut/semver/issues"
+    },
+    "homepage": "https://github.com/svaraborut/semver#readme",
+    "dependencies": {
+        "@actions/core": "^3.0.1",
+        "@actions/github": "^9.1.1"
+    },
+    "devDependencies": {
+        "@types/bun": "latest",
+        "prettier": "^3.9.10"
+    },
+    "peerDependencies": {
+        "typescript": "^7.0.2"
+    }
+}
