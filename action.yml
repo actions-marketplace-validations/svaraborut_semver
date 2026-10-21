@@ -1,4 +1,4 @@
-name: SemVer
+name: Automated SemVer
 description: Bump the version from Conventional Commits, update version files and push a git tag.
 author: Borut Svara
 inputs:
@@ -30,3 +30,6 @@ outputs:
 runs:
   using: node24
   main: dist/index.js
+branding:
+  icon: 'airplay'
+  color: 'red'
