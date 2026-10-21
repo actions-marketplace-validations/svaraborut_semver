@@ -1,0 +1,32 @@
+name: SemVer
+description: Bump the version from Conventional Commits, update version files and push a git tag.
+author: Borut Svara
+inputs:
+  files:
+    description: Version files to update (package.json, pyproject.toml, *.py with __version__), comma or newline separated.
+    required: false
+    default: ''
+  preview:
+    description: Produce an ephemeral preview version. No tag is pushed.
+    required: false
+    default: 'false'
+  preview-format:
+    description: Preview version template. Placeholders are VERSION, MAJOR, MINOR, PATCH, COUNT, SHA.
+    required: false
+    default: '{{VERSION}}-rc{{COUNT}}'
+  aliases:
+    description: Moving tags to update on release, any of major, minor, latest.
+    required: false
+    default: 'major,minor,latest'
+  minimum-bump:
+    description: Smallest bump to apply, one of patch, minor, major.
+    required: false
+    default: patch
+outputs:
+  version:
+    description: The computed version, without the v prefix.
+  tag:
+    description: The tag name, the version prefixed with v.
+runs:
+  using: node24
+  main: dist/index.js
